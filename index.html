@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adobe Summit 2026 — Featured Sessions</title>
+<style>
+  @media print {
+    .no-print { display: none; }
+    body { background: #fff; }
+    .card { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f0; color: #1a1a1a; }
+  .page { max-width: 860px; margin: 2rem auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+
+  .cover { background: #1f1446; padding: 3rem 3rem 2.5rem; color: #fff; }
+  .cover-eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #9f97e8; margin-bottom: 12px; }
+  .cover h1 { font-size: 32px; font-weight: 600; line-height: 1.2; margin-bottom: 8px; }
+  .cover-sub { font-size: 15px; color: #c8c4f0; }
+  .cover-meta { display: flex; gap: 2rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); flex-wrap: wrap; }
+  .cover-meta-item { font-size: 13px; color: #c8c4f0; }
+  .cover-meta-item strong { display: block; color: #fff; font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+  .catalog-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 1.5rem; font-size: 12px; color: #9f97e8; text-decoration: none; border: 1px solid rgba(159,151,232,0.4); padding: 6px 14px; border-radius: 20px; }
+  .catalog-link:hover { color: #fff; border-color: #fff; }
+
+  .quick-links { padding: 1.5rem 3rem; background: #f0effe; border-bottom: 1px solid #d8d4f8; }
+  .quick-links-title { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #534AB7; margin-bottom: 10px; }
+  .quick-links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+  .ql-card { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #d8d4f8; border-radius: 8px; padding: 10px 12px; text-decoration: none; color: #1a1a1a; font-size: 12px; font-weight: 500; transition: border-color .15s, background .15s; }
+  .ql-card:hover { border-color: #7F77DD; background: #fafafe; color: #534AB7; }
+  .ql-icon { width: 28px; height: 28px; border-radius: 6px; background: #EEEDFE; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ql-icon svg { width: 14px; height: 14px; stroke: #534AB7; fill: none; stroke-width: 1.5; }
+
+  .legend { display: flex; gap: 1rem; flex-wrap: wrap; padding: 1.25rem 3rem; background: #f9f8f6; border-bottom: 1px solid #e8e6e0; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #555; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-keynote { background: #7F77DD; }
+  .dot-express { background: #D4537E; }
+  .dot-genstudio { background: #1D9E75; }
+  .dot-workfront { background: #2F9E44; }
+  .dot-acrobat { background: #E67700; }
+  .dot-marketo { background: #7048E8; }
+  .dot-strategy { background: #BA7517; }
+  .dot-net { background: #0E86B8; }
+  .dot-csc { background: #E8170A; }
+
+  .body { padding: 2rem 3rem 3rem; }
+  .section-block { margin-bottom: 3rem; }
+
+  .day-header {
+    font-size: 17px; font-weight: 700; color: #1f1446;
+    padding: 14px 18px; margin-bottom: 1.5rem;
+    background: #f0effe; border-radius: 8px;
+    border-left: 4px solid #7F77DD;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .day-header-sub { font-size: 12px; font-weight: 500; color: #7F77DD; }
+
+  .section-label { font-size: 12px; font-weight: 600; color: #444; margin: 1.25rem 0 .6rem; display: flex; align-items: center; gap: 6px; }
+  .section-label::before { content: ''; display: inline-block; width: 3px; height: 14px; border-radius: 2px; }
+  .section-keynote::before { background: #7F77DD; }
+  .section-express::before { background: #D4537E; }
+  .section-genstudio::before { background: #1D9E75; }
+  .section-workfront::before { background: #2F9E44; }
+  .section-acrobat::before { background: #E67700; }
+  .section-marketo::before { background: #7048E8; }
+  .section-strategy::before { background: #BA7517; }
+  .section-net::before { background: #0E86B8; }
+  .section-meetings::before { background: #b0aad8; }
+  .section-csc::before { background: #E8170A; }
+
+  .card { display: flex; gap: 14px; padding: 12px 14px; border: 1px solid #ebe9e3; border-radius: 8px; margin-bottom: 8px; background: #fff; text-decoration: none; color: inherit; transition: border-color .15s, background .15s; }
+  a.card:hover { border-color: #7F77DD; background: #fafafe; }
+  a.card:hover .card-title { color: #534AB7; }
+  .card-accent { width: 3px; border-radius: 3px; flex-shrink: 0; align-self: stretch; }
+  .accent-keynote { background: #7F77DD; }
+  .accent-express { background: #D4537E; }
+  .accent-genstudio { background: #1D9E75; }
+  .accent-workfront { background: #2F9E44; }
+  .accent-acrobat { background: #E67700; }
+  .accent-marketo { background: #7048E8; }
+  .accent-strategy { background: #BA7517; }
+  .accent-net { background: #0E86B8; }
+  .accent-csc { background: #E8170A; }
+  .card-body { flex: 1; min-width: 0; }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+  .card-title { font-size: 13px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
+  .card-time { font-size: 11px; color: #888; margin-bottom: 3px; font-weight: 500; }
+  .card-summary { font-size: 12px; color: #555; line-height: 1.5; margin-top: 3px; }
+  .tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .tag-keynote { background: #EEEDFE; color: #3C3489; }
+  .tag-express { background: #FFF0F6; color: #862e4e; }
+  .tag-genstudio { background: #E1F5EE; color: #085041; }
+  .tag-workfront { background: #F0FFF4; color: #1a5e2a; }
+  .tag-acrobat { background: #FFF3E0; color: #7a3e00; }
+  .tag-marketo { background: #F3EFFF; color: #3d1d9e; }
+  .tag-strategy { background: #FAEEDA; color: #633806; }
+  .tag-net { background: #E0F3FB; color: #0a5c82; }
+  .tag-csc { background: #fff1f0; color: #991005; }
+  .link-icon { width: 12px; height: 12px; flex-shrink: 0; opacity: 0.4; margin-top: 2px; }
+  a.card:hover .link-icon { opacity: 1; }
+  .no-link { display: flex; gap: 14px; padding: 12px 14px; border: 1px solid #ebe9e3; border-radius: 8px; margin-bottom: 8px; background: #fff; }
+  .empty-day { font-size: 13px; color: #aaa; font-style: italic; padding: 4px 2px 4px; }
+
+  .download-bar { display: flex; gap: 10px; padding: 1rem 3rem; background: #f9f8f6; border-top: 1px solid #e8e6e0; }
+  .btn { font-size: 13px; padding: 8px 18px; border-radius: 6px; border: 1px solid #ccc; background: #fff; color: #333; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: #1f1446; color: #fff; border-color: #1f1446; }
+  .btn:hover { opacity: .85; }
+  .footer { padding: 1.5rem 3rem; font-size: 11px; color: #aaa; border-top: 1px solid #ebe9e3; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer a { color: #7F77DD; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-eyebrow">Featured Sessions Guide</div>
+    <h1>Adobe Summit 2026</h1>
+    <div class="cover-sub">Sunday Apr 19 – Wednesday Apr 22 · Las Vegas, NV</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Sessions</strong>11 Featured + Networking</div>
+      <div class="cover-meta-item"><strong>Days</strong>Apr 19 · Apr 20 · Apr 21 · Apr 22</div>
+      <div class="cover-meta-item"><strong>Focus</strong>AI · Content Supply Chain · GenStudio · Express</div>
+    </div>
+    <a class="catalog-link no-print" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=&tab.allsessions=1643149273691001NFtR" target="_blank">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="10" height="10" rx="1.5"/><path d="M4 6h4M6 4v4"/></svg>
+      Browse all sessions
+    </a>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="quick-links no-print">
+    <div class="quick-links-title">Quick Links</div>
+    <div class="quick-links-grid">
+      <a class="ql-card" href="https://summit.adobe.com/na/preconference/#adobe-customer-journey-analytics-training" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M5 2v2M9 2v2M2 7h10"/></svg></div>
+        Sunday, Apr 19
+      </a>
+      <a class="ql-card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS219%20os807%20os408%20os410%20os407%20sk1%20os421&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M5 2v2M9 2v2M2 7h10"/></svg></div>
+        Monday, Apr 20
+      </a>
+      <a class="ql-card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=os422%20sk3%20sk4%20os760&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M5 2v2M9 2v2M2 7h10"/></svg></div>
+        Tuesday, Apr 21
+      </a>
+      <a class="ql-card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=l338%20l321%20s332%20s325&tab.allsessions=1643149273691001NFtR&showMyInterest=false" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M5 2v2M9 2v2M2 7h10"/></svg></div>
+        Wednesday, Apr 22
+      </a>
+      <a class="ql-card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=CP6%20S331%20CP19%20L336%20L338%20S321%20S854%20L321%20S332%20S325%20&tab.format=1643049381306001SAYb" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><path d="M7 2L9.5 6.5H12L8.5 9L9.5 13L7 10.5L4.5 13L5.5 9L2 6.5H4.5Z" stroke="none" fill="#534AB7"/></svg></div>
+        Recommended CSC sessions
+      </a>
+      <a class="ql-card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=&tab.format=1643049381306001SAYb&search.product=1532383770321003J0Qw&search.product=option_1758667577041&search.industry=15323839047270092TBD&search.industry=15323839047270162wi9" target="_blank">
+        <div class="ql-icon"><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5"/><path d="M7 4v3l2 2"/></svg></div>
+        Adobe Analytics
+      </a>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="dot dot-keynote"></div> Keynote</div>
+    <div class="legend-item"><div class="dot dot-express"></div> Adobe Express</div>
+    <div class="legend-item"><div class="dot dot-genstudio"></div> GenStudio</div>
+    <div class="legend-item"><div class="dot dot-workfront"></div> Workfront</div>
+    <div class="legend-item"><div class="dot dot-acrobat"></div> Acrobat</div>
+    <div class="legend-item"><div class="dot dot-marketo"></div> Marketo</div>
+    <div class="legend-item"><div class="dot dot-strategy"></div> Strategy</div>
+    <div class="legend-item"><div class="dot dot-net"></div> Networking</div>
+    <div class="legend-item"><div class="dot dot-csc"></div> CSC Session</div>
+  </div>
+
+  <div class="body">
+
+    <!-- ══════════════════════ SUNDAY ══════════════════════ -->
+    <div class="section-block" id="sunday">
+      <div class="day-header">
+        Sunday, April 19
+        <span class="day-header-sub">Arrival Day</span>
+      </div>
+      <div class="section-label section-strategy">Preconference Training</div>
+      <a class="card" href="https://summit.adobe.com/na/preconference/#adobe-customer-journey-analytics-training" target="_blank">
+        <div class="card-accent accent-strategy"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Preconference training — full-day hands-on</div><span class="tag tag-strategy">Training</span></div>
+          <div class="card-summary">Full-day preconference training session — arrive early and get hands-on with Adobe Customer Journey Analytics before the main event begins.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+    </div>
+
+    <!-- ══════════════════════ MONDAY ══════════════════════ -->
+    <div class="section-block" id="monday">
+      <div class="day-header">
+        Monday, April 20
+        <span class="day-header-sub">Day 1</span>
+      </div>
+
+      <div class="section-label section-csc">CSC Sessions</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=CP6&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adapt or Disappear: How Brands Win with AI-Powered Search</div><span class="tag tag-csc">Session · CP6</span></div>
+          <div class="card-time">10:15 AM – 10:40 AM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=S331&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Clicks to Visibility: How General Motors Builds Brand Presence in AI Search</div><span class="tag tag-csc">Session · S331</span></div>
+          <div class="card-time">11:30 AM – 12:30 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=CP19&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">AI is Reshaping Brand Visibility and Content Management: Are you Ready?</div><span class="tag tag-csc">Session · CP19</span></div>
+          <div class="card-time">1:15 PM – 1:40 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=L336&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Optimize Brand Visibility for AI Agents and Generative Search</div><span class="tag tag-csc">Lab · L336</span></div>
+          <div class="card-time">4:30 PM – 6:00 PM PDT</div>
+          <div class="card-summary">Hands-on lab.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-keynote">Strategy Keynotes</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=SK1&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-keynote"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Moving Enterprises From AI Experimentation to Customer Experience Impact</div><span class="tag tag-keynote">Keynote · SK1</span></div>
+          <div class="card-time">11:00 AM – 11:15 AM PDT</div>
+          <div class="card-summary">Hear from leading organizations using generative and agentic AI to move faster and deliver better customer experiences. Featuring Sunil Menon (VP, Experience Cloud), Kelly Mahoney &amp; Mike Maresca (Ulta Beauty), and Ashley Kramer (OpenAI) — with live product demos.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=SK3&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-keynote"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">The New Era of Customer Engagement: Turning Moments into Lifetime Value</div><span class="tag tag-keynote">Keynote · SK3</span></div>
+          <div class="card-time">12:30 PM – 12:45 PM PDT</div>
+          <div class="card-summary">Discover how leading brands use AI-powered insights to unify customer data, orchestrate journeys, and personalize engagement across channels in real time — from acquisition and activation to loyalty and advocacy.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-genstudio">GenStudio &amp; AI Strategy</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS409&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-genstudio"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Drive Growth with AI-Enabled Workflows in Adobe GenStudio for Performance Marketing</div><span class="tag tag-genstudio">Session · OS409</span></div>
+          <div class="card-time">11:00 AM – 11:15 AM PDT</div>
+          <div class="card-summary">Learn how high-growth marketing orgs assemble, activate, and optimize high-performing content using AI-powered workflows — unlocking more variations and reducing creative bottlenecks across channels.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS407&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-genstudio"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Top 5 AI Trends and What They Mean for Your Content Supply Chain</div><span class="tag tag-genstudio">Session · OS407</span></div>
+          <div class="card-time">11:00 AM – 11:15 AM PDT</div>
+          <div class="card-summary">Explore how AI catalyzes ideation, accelerates workflows, and feeds analytics back for continuous improvement — preparing your content supply chain for the next wave of AI-first innovation.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS410&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-genstudio"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Scale Growth with Personalized Email in GenStudio for Performance Marketing</div><span class="tag tag-genstudio">Session · OS410</span></div>
+          <div class="card-time">11:15 AM – 11:30 AM PDT</div>
+          <div class="card-summary">Discover how GenStudio enables teams to rapidly scale personalized email production, streamline execution, and drive stronger ROI through AI-powered workflows built for speed and scale.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-acrobat">Acrobat &amp; Express</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS422&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-acrobat"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">AI-Powered Tools to Comprehend, Collaborate, and Create</div><span class="tag tag-acrobat">Session · OS422</span></div>
+          <div class="card-time">12:30 PM – 12:45 PM PDT</div>
+          <div class="card-summary">Discover how Acrobat Studio and Adobe Express work together to transform static PDFs into engaging, actionable assets — streamlining document creation, editing, review, and real-time co-creation with stakeholders.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-marketo">Marketo Engage</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS219&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-marketo"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">How the All-New Email Designer Supercharges Marketo Engage</div><span class="tag tag-marketo">Session · OS219</span></div>
+          <div class="card-time">12:45 PM – 1:00 PM PDT</div>
+          <div class="card-summary">Learn how a modern, gen AI-enhanced authoring experience increases speed, reduces manual effort, and keeps teams on brand. Create and refine email content in-editor, update visuals in context, and turn designs into reusable templates.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-express">Adobe Express</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS760&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-express"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Shred the Static Quo</div><span class="tag tag-express">Session · OS760</span></div>
+          <div class="card-time">4:30 PM – 5:30 PM PDT</div>
+          <div class="card-summary">The most consequential moment in your revenue cycle is still being handled by a static file. The gap between how a brand shows up in the market and how it shows up in the deal is where revenue is quietly lost. See how leading teams make a different decision about what they do with what they've already created.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=s419&tab.allsessions=1643149273691001NFtR&search.product=1692735303734007NsYx" target="_blank">
+        <div class="card-accent accent-express"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">PepsiCo &amp; Adobe: Rebuilding Creative Foundations for the AI Era</div><span class="tag tag-express">Session · S419</span></div>
+          <div class="card-time">4:30 PM – 5:30 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-net">Partner Networking</div>
+      <a class="card" href="https://events.bounteous.com/bntsummitkickoffbreakfast/adobe" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Bounteous wake up &amp; coffee kickoff breakfast</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">8:00–10:00 AM PST</div>
+          <div class="card-summary">Relaxed open-house breakfast to kick off Summit and connect with peers and partners.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://event.adobe.com/b2bhouse-at-adobesummit/" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">B2B House at Adobe Summit</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">10:30 AM–6:00 PM PT</div>
+          <div class="card-summary">A full-day B2B networking hub — connect with peers, partners, and Adobe experts across sessions and conversations.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://events.bounteous.com/bntssummitagenticb2b/existing" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Bounteous agentic B2B orchestration happy hour</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">4:00–5:30 PM PST</div>
+          <div class="card-summary">Operationalizing B2B buying group engagement through Adobe's AI-driven orchestration of sales and marketing.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://events.cheq.ai/golden-aige2026/adswerve" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adswerve happy hour</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">7:00–10:00 PM PST</div>
+          <div class="card-summary">Evening networking with Adobe partners and industry peers in an intimate setting.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://adobe.omc.com/adobe-summit-casino-night" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Omnicom casino night</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">7:30–10:30 PM PST</div>
+          <div class="card-summary">High-energy networking combining entertainment with connection to marketing leaders.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-meetings">1:1 Meetings</div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#7F77DD;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — CSC meeting</div><span class="tag tag-keynote">1:1 · CSC</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one conversation with a CSC specialist.</div>
+        </div>
+      </div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#BA7517;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — Analytics meeting</div><span class="tag tag-strategy">1:1 · Analytics</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one focused on Adobe Analytics and Customer Journey Analytics.</div>
+        </div>
+      </div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#534AB7;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — Personalization at scale (B2B) meeting</div><span class="tag tag-keynote">1:1 · B2B</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one on B2B personalization strategy and Adobe's AI-driven engagement tools.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════ TUESDAY ══════════════════════ -->
+    <div class="section-block" id="tuesday">
+      <div class="day-header">
+        Tuesday, April 21
+        <span class="day-header-sub">Day 2</span>
+      </div>
+
+      <div class="section-label section-csc">CSC Sessions</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=s108&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Cisco Adds Next-Level B2B Analysis with Adobe Customer Journey Analytics</div><span class="tag tag-csc">Session · S108</span></div>
+          <div class="card-time">11:30 AM – 12:30 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=L338&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Build Conversational Experiences Using AEM Content AI and LLM Apps</div><span class="tag tag-csc">Lab · L338</span></div>
+          <div class="card-time">1:00 PM – 2:30 PM PDT · also Wed, Apr 22 8:30–10:00 AM</div>
+          <div class="card-summary">Hands-on lab.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=S321&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adobe Experience Manager Sites: Transformative Innovations for the Agentic Web</div><span class="tag tag-csc">Session · S321</span></div>
+          <div class="card-time">1:30 PM – 2:30 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=S854&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">5X AI Citations. Faster Launches. The New Playbook for Brand Visibility</div><span class="tag tag-csc">Session · S854</span></div>
+          <div class="card-time">3:00 PM – 4:00 PM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-keynote">Strategy Keynote</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=SK4&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-keynote"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Transforming your Content Supply Chain for the AI World</div><span class="tag tag-keynote">Keynote · SK4</span></div>
+          <div class="card-time">1:30 PM – 2:30 PM PDT</div>
+          <div class="card-summary">AI is restructuring the entire content economy. Learn how forward-leaning brands build content supply chains for the AI world — shifting from static, linear workflows to dynamic agentic systems. See how Adobe GenStudio unifies planning, creation, activation, and insights into an intelligent engine that learns with every campaign.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-workfront">Adobe Workfront</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS807&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-workfront"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">AI and the Future of Adobe Workfront</div><span class="tag tag-workfront">Session · OS807</span></div>
+          <div class="card-time">3:00 PM – 4:00 PM PDT</div>
+          <div class="card-summary">Join product leaders Paul Vaughn and Richard Whitehead for a forward-looking session on how Adobe is evolving strategic planning and workflow orchestration with an AI-first approach — simplifying user experiences, automating work, and unlocking new levels of productivity.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-express">Adobe Express</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=OS421&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-express"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Scale On-Brand Content Without Chaos with Adobe Express</div><span class="tag tag-express">Session · OS421</span></div>
+          <div class="card-time">4:15 PM – 4:30 PM PDT</div>
+          <div class="card-summary">Get top tips and tricks on driving productivity with Adobe Express using brand-approved templates, AI-powered tools, and built-in collaboration workflows. Learn how Express empowers teams to create, remix, localize, and publish on-brand content with ease — doing more in less time with no added resources.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-net">Partner Networking</div>
+      <a class="card" href="https://event.adobe.com/b2bhouse-at-adobesummit/" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adobe GenStudio breakfast roundtable</div><span class="tag tag-net">Networking · Invite only</span></div>
+          <div class="card-time">7:30–9:00 AM PST</div>
+          <div class="card-summary">AI-driven media, creative optimization, and emerging retail media strategies.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://event.adobe.com/adobe-summit-fuel-up" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adswerve lunch — Adobe Journey Optimizer focus</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">11:30 AM–1:30 PM PST</div>
+          <div class="card-summary">Interactive session to engage with experts on Adobe Journey Optimizer and maximize Adobe investment strategies.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://event.adobe.com/scaling-ai-in-retail-and-consumer-goods" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Adobe x Deloitte AI roundtable</div><span class="tag tag-net">Networking · Executive</span></div>
+          <div class="card-time">11:30 AM–1:00 PM PST</div>
+          <div class="card-summary">Executive roundtable on operationalizing AI across marketing, commerce, and customer experience.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://event.adobe.com/reinventing-media-networks-adobe-and-bestbuy" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Reinventing media networks — Adobe &amp; Best Buy</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Exploring how retail media networks are being reinvented with Adobe and Best Buy's collaborative approach.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://event.adobe.com/scaling-ai-in-retail-and-consumer-goods" target="_blank">
+        <div class="card-accent accent-net"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Scaling AI in retail and consumer goods</div><span class="tag tag-net">Networking</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Roundtable on scaling AI-driven strategies across retail and consumer goods with Adobe partners.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+
+      <div class="section-label section-meetings">1:1 Meetings</div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#7F77DD;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — CSC meeting</div><span class="tag tag-keynote">1:1 · CSC</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one conversation with a CSC specialist.</div>
+        </div>
+      </div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#BA7517;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — Analytics meeting</div><span class="tag tag-strategy">1:1 · Analytics</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one focused on Adobe Analytics and Customer Journey Analytics.</div>
+        </div>
+      </div>
+      <div class="no-link" style="border:1.5px dashed #b0aad8;">
+        <div class="card-accent" style="background:#534AB7;"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Open block — Personalization at scale (B2B) meeting</div><span class="tag tag-keynote">1:1 · B2B</span></div>
+          <div class="card-time">Time TBD</div>
+          <div class="card-summary">Reserved time for a one-on-one on B2B personalization strategy and Adobe's AI-driven engagement tools.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block" id="wednesday">
+      <div class="day-header">
+        Wednesday, April 22
+        <span class="day-header-sub">Day 3</span>
+      </div>
+
+      <div class="section-label section-csc">CSC Sessions</div>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=L338&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Build Conversational Experiences Using AEM Content AI and LLM Apps</div><span class="tag tag-csc">Lab · L338</span></div>
+          <div class="card-time">8:30 AM – 10:00 AM PDT · also Tue, Apr 21 1:00–2:30 PM</div>
+          <div class="card-summary">Hands-on lab.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=L321&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Drive Agentic Shopping Experiences from your Product Catalog</div><span class="tag tag-csc">Lab · L321</span></div>
+          <div class="card-time">8:30 AM – 10:00 AM PDT</div>
+          <div class="card-summary">Hands-on lab.</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=S332&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">Dick's Sporting Goods Reinvents Customer Experience with Brand Concierge</div><span class="tag tag-csc">Session · S332</span></div>
+          <div class="card-time">9:00 AM – 10:00 AM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+      <a class="card" href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=S325&tab.allsessions=1643149273691001NFtR" target="_blank">
+        <div class="card-accent accent-csc"></div>
+        <div class="card-body">
+          <div class="card-top"><div class="card-title">AEM Sites Optimizer: Evolving from Manual Workflows to the Agentic Web</div><span class="tag tag-csc">Session · S325</span></div>
+          <div class="card-time">10:30 AM – 11:30 AM PDT</div>
+        </div>
+        <svg class="link-icon" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1h4v4M11 1L5 7"/><path d="M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="download-bar no-print">
+    <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+    <button class="btn" onclick="downloadHTML()">Download HTML</button>
+  </div>
+
+  <div class="footer">
+    <span>Adobe Summit 2026 · Featured Sessions Guide</span>
+    <a href="https://reg.adobe.com/flow/adobe/as26/sessions/page/catalog?search=&tab.allsessions=1643149273691001NFtR" target="_blank">Full session catalog →</a>
+  </div>
+
+</div>
+<script>
+function downloadHTML() {
+  const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'adobe-summit-2026-featured-sessions.html';
+  a.click();
+}
+</script>
+</body>
+</html>
